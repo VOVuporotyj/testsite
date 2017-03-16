@@ -4,17 +4,26 @@ import (
 	"html/template"
 	"net/http"
 
+	"fmt"
+
 	"github.com/go-martini/martini"
 )
 
-var templates = template.Must(template.ParseGlob("templates/*"))
-
 func indexPage(w http.ResponseWriter, req *http.Request) {
-	templates.ExecuteTemplate(w, "indexPage", nil)
+	t, err := template.ParseFiles("templates/index.html")
+	if err != nil {
+		fmt.Fprintf(w, err.Error())
+	}
+	t.ExecuteTemplate(w, "indexPage", nil)
+
 }
 
 func loginPage(w http.ResponseWriter, req *http.Request) {
-	templates.ExecuteTemplate(w, "loginPage", nil)
+	t, err := template.ParseFiles("templates/login.html")
+	if err != nil {
+		fmt.Fprintf(w, err.Error())
+	}
+	t.ExecuteTemplate(w, "loginPage", nil)
 
 }
 
