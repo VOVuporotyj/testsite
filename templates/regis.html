@@ -1,0 +1,29 @@
+{{ define "regisPage"}}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Регистрация</title>
+</head>
+<body>
+    <div class="col-xs-4">
+    </div>
+    
+<form roles="form" method="POST" action="/testPage">
+    <div class="form-group">
+        <label>Имя</label>
+        <input type="text" class="form-contol" id="username" name="username"  />
+        </div> 
+<form roles="form" method="POST" action="/testPage">
+    <div class="form-group">
+        <label>Пароль</label>
+        <input type="pasword" class="form-contol" id="password" name="password"  />
+        </div>
+<button type="submit" class="btn btn-default"> Войти </button>
+</form>  
+   
+</body>
+</html>
+
+{{ end }}
