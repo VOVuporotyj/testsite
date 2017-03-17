@@ -3,9 +3,8 @@ package main
 import (
 	"fmt"
 	"html/template"
-	"net/http"
-
 	"log"
+	"net/http"
 	"os"
 
 	"github.com/boltdb/bolt"
