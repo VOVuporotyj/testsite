@@ -11,7 +11,7 @@ import (
 	"github.com/boltdb/bolt"
 )
 
-func regisPage(w http.ResponseWriter, req *http.Request) {
+func RegisPage(w http.ResponseWriter, req *http.Request) {
 	t, err := template.ParseFiles("templates/regis.html")
 	if err != nil {
 		fmt.Fprintf(w, err.Error())
@@ -20,7 +20,7 @@ func regisPage(w http.ResponseWriter, req *http.Request) {
 
 }
 
-func postRegis(w http.ResponseWriter, r *http.Request) {
+func PostRegis(w http.ResponseWriter, r *http.Request) {
 	username := r.PostFormValue("username")
 	password := r.PostFormValue("password")
 	fmt.Println(username)
@@ -54,7 +54,7 @@ func postRegis(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func loginPage(w http.ResponseWriter, req *http.Request) {
+func LoginPage(w http.ResponseWriter, req *http.Request) {
 	t, err := template.ParseFiles("templates/login.html")
 	if err != nil {
 		fmt.Println(w, err.Error())
@@ -62,7 +62,7 @@ func loginPage(w http.ResponseWriter, req *http.Request) {
 	fmt.Println(t.ExecuteTemplate(w, "loginPage", nil))
 }
 
-func postlogin(w http.ResponseWriter, r *http.Request) {
+func Postlogin(w http.ResponseWriter, r *http.Request) {
 	username := r.PostFormValue("username")
 	password := r.PostFormValue("password")
 	fmt.Println(username)

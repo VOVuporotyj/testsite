@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"net/http"
 
+	"github.com/VOVuporotyj/testsite/Reg"
 	"github.com/go-martini/martini"
 )
 
@@ -21,9 +22,9 @@ func main() {
 
 	m := martini.Classic()
 	m.Get("/", indexPage)
-	m.Get("/regis", reg.regisPage)
-	m.Post("/testPage", reg.postRegis)
-	m.Get("/login", reg.loginPage)
-	m.Post("/testPage", reg.postlogin)
+	m.Get("/regis", Reg.RegisPage)
+	m.Post("/testPage", Reg.PostRegis)
+	m.Get("/login", Reg.LoginPage)
+	m.Post("/testPage", Reg.Postlogin)
 	m.Run()
 }
