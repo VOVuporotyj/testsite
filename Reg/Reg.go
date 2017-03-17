@@ -1,4 +1,4 @@
-package registration
+package Reg
 
 import (
 	"fmt"
