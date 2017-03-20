@@ -11,6 +11,7 @@ import (
 	"github.com/boltdb/bolt"
 )
 
+//RegisPage открывает шаблон regis.
 func RegisPage(w http.ResponseWriter, req *http.Request) {
 	t, err := template.ParseFiles("templates/regis.html")
 	if err != nil {
@@ -20,6 +21,7 @@ func RegisPage(w http.ResponseWriter, req *http.Request) {
 
 }
 
+//PostRegis записывает в БД лог и пас.
 func PostRegis(w http.ResponseWriter, r *http.Request) {
 	username := r.PostFormValue("username")
 	password := r.PostFormValue("password")
@@ -54,6 +56,7 @@ func PostRegis(w http.ResponseWriter, r *http.Request) {
 
 }
 
+//LoginPage открывает шаблон Login.
 func LoginPage(w http.ResponseWriter, req *http.Request) {
 	t, err := template.ParseFiles("templates/login.html")
 	if err != nil {
@@ -62,6 +65,7 @@ func LoginPage(w http.ResponseWriter, req *http.Request) {
 	fmt.Println(t.ExecuteTemplate(w, "loginPage", nil))
 }
 
+//Postlogin сравнивает логин и пароль с базой.
 func Postlogin(w http.ResponseWriter, r *http.Request) {
 	username := r.PostFormValue("username")
 	password := r.PostFormValue("password")
